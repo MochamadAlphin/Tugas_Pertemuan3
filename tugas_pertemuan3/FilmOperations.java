@@ -11,7 +11,7 @@ public class FilmOperations {
         connection = DatabaseConnection.getConnection();
     }
 
-    // Create
+
     public void addFilm(Film film) {
         String query = "INSERT INTO film (nama_film, genre_film) VALUES (?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
@@ -24,10 +24,10 @@ public class FilmOperations {
         }
     }
 
-    // Read
+ 
     public List<Film> getFilms() {
         List<Film> films = new ArrayList<>();
-        String query = "SELECT * FROM film"; // Ganti dari films menjadi film
+        String query = "SELECT * FROM film"; 
         try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
 
@@ -44,7 +44,7 @@ public class FilmOperations {
         return films;
     }
 
-    // Update
+
     public void updateFilm(int idFilm, String newNamaFilm, String newGenreFilm) {
         String query = "UPDATE film SET nama_film = ?, genre_film = ? WHERE id_film = ?"; // Ganti dari films menjadi film
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
@@ -58,7 +58,7 @@ public class FilmOperations {
         }
     }
 
-    // Delete
+
     public void deleteFilm(int idFilm) {
         String query = "DELETE FROM film WHERE id_film = ?"; // Ganti dari films menjadi film
         try (PreparedStatement stmt = connection.prepareStatement(query)) {

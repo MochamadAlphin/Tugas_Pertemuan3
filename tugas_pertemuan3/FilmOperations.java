@@ -46,7 +46,7 @@ public class FilmOperations {
 
 
     public void updateFilm(int idFilm, String newNamaFilm, String newGenreFilm) {
-        String query = "UPDATE film SET nama_film = ?, genre_film = ? WHERE id_film = ?"; // Ganti dari films menjadi film
+        String query = "UPDATE film SET nama_film = ?, genre_film = ? WHERE id_film = ?"; 
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, newNamaFilm);
             stmt.setString(2, newGenreFilm);
@@ -60,7 +60,7 @@ public class FilmOperations {
 
 
     public void deleteFilm(int idFilm) {
-        String query = "DELETE FROM film WHERE id_film = ?"; // Ganti dari films menjadi film
+        String query = "DELETE FROM film WHERE id_film = ?"; 
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, idFilm);
             stmt.executeUpdate();

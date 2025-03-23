@@ -44,7 +44,7 @@ public class TransaksiOperations {
                 int idFilm = rs.getInt("id_film");
                 int jumlahTicket = rs.getInt("jumlah_ticket");
                 Transaksi transaksi = new Transaksi(idFilm, jumlahTicket);
-                transaksi.setIdPemesanan(idPemesanan); // Set ID pemesanan
+                transaksi.setIdPemesanan(idPemesanan); 
                 transaksiList.add(transaksi);
             }
             System.out.println("Jumlah transaksi yang ditemukan: " + transaksiList.size());
